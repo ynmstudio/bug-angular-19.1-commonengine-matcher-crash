@@ -5,7 +5,7 @@ export const routes: Routes = [
         matcher: (url: UrlSegment[]): UrlMatchResult | null => {
             const routeA = url.length > 1 && url.at(-1)?.path === 'route-a';
             const slug = url.at(-1);
-            console.debug('editorialPage', url, routeA, slug);
+            console.debug('Route A', url, routeA, slug);
             // return url.length === 1 && url[0].path.endsWith('.html') ? ({ consumed: url }) : null;
             return !routeA && slug
                 ? { consumed: url, posParams: { slug: slug } }
@@ -17,7 +17,7 @@ export const routes: Routes = [
         matcher: (url: UrlSegment[]): UrlMatchResult | null => {
             const routeB = url.length > 1 && url.at(-1)?.path === 'route-b';
             const slug = url.at(-1);
-            console.debug('editorialPage', url, routeB, slug);
+            console.debug('Route B', url, routeB, slug);
             // return url.length === 1 && url[0].path.endsWith('.html') ? ({ consumed: url }) : null;
             return !routeB && slug
                 ? { consumed: url, posParams: { slug: slug } }
